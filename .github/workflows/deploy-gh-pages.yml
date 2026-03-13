@@ -11,9 +11,9 @@ permissions:
 
 env:
   project-name: MaterialTheming.Pages
+  repo-name: MaterialTheming-BlazorShowcase
   release-output: release
   
-
 jobs:
   deploy-to-github-pages:
     runs-on: ubuntu-latest
@@ -28,7 +28,7 @@ jobs:
         run: dotnet publish ${{ env.project-name }} -c Release -o ${{ env.release-output }}
           
       - name: Replace base href in index.html
-        run: sed -i 's/<base href="\/" \/>/<base href="\/${{ env.project-name }}\/" \/>/g' ${{ env.release-output }}/wwwroot/index.html
+        run: sed -i 's/<base href="\/" \/>/<base href="\/${{ env.repo-name }}\/" \/>/g' ${{ env.release-output }}/wwwroot/index.html
 
       # GitHub Pages routing and MudBlazor's _content folder
       - name: Fix GitHub Pages routing and Jekyll issues
@@ -42,3 +42,4 @@ jobs:
         with:
           branch: gh-pages
           folder: ${{ env.release-output }}/wwwroot
+
