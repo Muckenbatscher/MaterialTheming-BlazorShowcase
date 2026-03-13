@@ -1,0 +1,18 @@
+﻿<MudPaper Style="@(_paperStyle)">
+    <MudText>@(ColorRoleName)</MudText>
+</MudPaper>
+
+@code {
+    [Parameter]
+    public RgbColor Background { get; set; } = RgbColor.FromArgb(0xFFFFFF);
+
+    [Parameter]
+    public RgbColor Foreground { get; set; } = RgbColor.FromArgb(0x000000);
+
+    [Parameter]
+    public string ColorRoleName { get; set; } = string.Empty;
+
+    private string _paperStyle => $"background-color: {Background.ToHtml()}; color: {Foreground.ToHtml()};";
+    private string _textStyle => $"color: {Foreground.ToHtml()};";
+
+}
