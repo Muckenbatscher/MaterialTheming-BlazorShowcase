@@ -1,5 +1,5 @@
-﻿<MudPaper Style="@(_paperStyle)" Square="true">
-    <MudText>@(ColorRoleName)</MudText>
+﻿<MudPaper Style="@_paperStyle" Elevation="0" Square="true" Class="@($"px-4 d-flex align-center {_heightClass}")">
+    <MudText Typo="Typo.body2" Style="font-weight: 500;">@ColorRoleName</MudText>
 </MudPaper>
 
 @code {
@@ -12,7 +12,12 @@
     [Parameter]
     public string ColorRoleName { get; set; } = string.Empty;
 
-    private string _paperStyle => $"background-color: {Background.ToHtml()}; color: {Foreground.ToHtml()};";
-    private string _textStyle => $"color: {Foreground.ToHtml()};";
+    [Parameter]
+    public bool IsLarge { get; set; } = false;
 
+    private string _bgColor => Background.ToHtml();
+    private string _fgColor => Foreground.ToHtml();
+
+    private string _paperStyle => $"background-color: {_bgColor}; color: {_fgColor};";
+    private string _heightClass => IsLarge ? "py-8" : "py-4";
 }

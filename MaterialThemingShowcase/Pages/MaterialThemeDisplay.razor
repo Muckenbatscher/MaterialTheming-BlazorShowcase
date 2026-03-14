@@ -2,27 +2,27 @@
 
 <PageTitle>Material Theming</PageTitle>
 
-<MudButton Color="_color" Variant="MudBlazor.Variant.Filled" @onclick="GenerateColor">Generate Color</MudButton>
+<MudButton Color="Color.Primary" Variant="MudBlazor.Variant.Filled" @onclick="GenerateColor">Generate Color</MudButton>
 
-<ColorRoleWithOnRoleDisplay ColorRoleName="TestRole" />
+<ThemeDisplay Theme="_theme"/>
 
 @code {
-    private Color _color = Color.Primary;
+    private ThemeColors? _theme = ThemeBuilder.CreateFromSourceColor("#FF4020").Build();
 
-    private readonly Color[] _colors = new Color[]
-    {
-        Color.Primary,
-        Color.Secondary,
-        Color.Tertiary,
-        Color.Info,
-        Color.Success,
-        Color.Warning,
-        Color.Error
-    };
 
     private void GenerateColor(MouseEventArgs args)
     {
-        var index = new Random().Next(0, _colors.Length);
-        _color = _colors[index];
+        var colors = new HctColor[]
+        {
+            HctColor.From(0, 50, 50),
+            HctColor.From(60, 50, 50),
+            HctColor.From(120, 50, 50),
+            HctColor.From(180, 50, 50),
+            HctColor.From(240, 50, 50),
+            HctColor.From(300, 50, 50),
+        };
+        var colorIndex = new Random().Next(0, colors.Length);
+        var colorHex = colors[colorIndex];
+        _theme = ThemeBuilder.CreateFromSourceColor(colorHex).Build();
     }
 }
