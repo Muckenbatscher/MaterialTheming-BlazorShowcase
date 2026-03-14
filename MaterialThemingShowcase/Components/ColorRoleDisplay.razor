@@ -1,4 +1,4 @@
-﻿<MudPaper Style="@_paperStyle" Elevation="0" Square="true" Class="@($"px-4 d-flex align-center {_heightClass}")">
+﻿<MudPaper Style="@_paperStyle" Elevation="0" Square="true" Class="@($"px-4 d-flex align-center")">
     <MudText Typo="Typo.body2" Style="font-weight: 500;">@ColorRoleName</MudText>
 </MudPaper>
 
@@ -13,11 +13,11 @@
     public string ColorRoleName { get; set; } = string.Empty;
 
     [Parameter]
-    public bool IsLarge { get; set; } = false;
+    public bool IsLarge { get; set; } = false; 
 
     private string _bgColor => Background.ToHtml();
     private string _fgColor => Foreground.ToHtml();
+    string _height => IsLarge ? "96px" : "64px";
 
-    private string _paperStyle => $"background-color: {_bgColor}; color: {_fgColor};";
-    private string _heightClass => IsLarge ? "py-8" : "py-4";
+    private string _paperStyle => $"background-color: {_bgColor}; color: {_fgColor}; height: {_height};";
 }

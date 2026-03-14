@@ -2,69 +2,58 @@
     <MudGrid Spacing="4">
         
         <MudItem xs="12" sm="6" md="3">
-            <MudStack Spacing="0">
-                <ColorRoleDisplay IsLarge="true" ColorRoleName="Primary" Background="Theme.Primary" Foreground="Theme.OnPrimary" />
-                <ColorRoleDisplay ColorRoleName="On Primary" Background="Theme.OnPrimary" Foreground="Theme.Primary" />
-                
-                <div class="mt-4"/>
-                
-                <ColorRoleDisplay IsLarge="true" ColorRoleName="Primary Container" Background="Theme.PrimaryContainer" Foreground="Theme.OnPrimaryContainer" />
-                <ColorRoleDisplay ColorRoleName="On Primary Container" Background="Theme.OnPrimaryContainer" Foreground="Theme.PrimaryContainer" />
-            </MudStack>
+            <ColorWithContainerDisplay ColorRoleName="Primary"
+                                       RoleColor="Theme.Primary" 
+                                       OnRoleColor="Theme.OnPrimary"
+                                       ContainerRoleColor="Theme.PrimaryContainer" 
+                                       OnContainerRoleColor="Theme.OnPrimaryContainer" />
         </MudItem>
 
         <MudItem xs="12" sm="6" md="3">
-            <MudStack Spacing="0">
-                <ColorRoleDisplay IsLarge="true" ColorRoleName="Secondary" Background="Theme.Secondary" Foreground="Theme.OnSecondary" />
-                <ColorRoleDisplay ColorRoleName="On Secondary" Background="Theme.OnSecondary" Foreground="Theme.Secondary" />
-                
-                <div class="mt-4"/>
-                
-                <ColorRoleDisplay IsLarge="true" ColorRoleName="Secondary Container" Background="Theme.SecondaryContainer" Foreground="Theme.OnSecondaryContainer" />
-                <ColorRoleDisplay ColorRoleName="On Secondary Container" Background="Theme.OnSecondaryContainer" Foreground="Theme.SecondaryContainer" />
-            </MudStack>
+            <ColorWithContainerDisplay ColorRoleName="Secondary"
+                                       RoleColor="Theme.Secondary"
+                                       OnRoleColor="Theme.OnSecondary"
+                                       ContainerRoleColor="Theme.SecondaryContainer"
+                                       OnContainerRoleColor="Theme.OnSecondaryContainer" />
         </MudItem>
 
         <MudItem xs="12" sm="6" md="3">
-            <MudStack Spacing="0">
-                <ColorRoleDisplay IsLarge="true" ColorRoleName="Tertiary" Background="Theme.Tertiary" Foreground="Theme.OnTertiary" />
-                <ColorRoleDisplay ColorRoleName="On Tertiary" Background="Theme.OnTertiary" Foreground="Theme.Tertiary" />
-                
-                <div class="mt-4" />
-                
-                <ColorRoleDisplay IsLarge="true" ColorRoleName="Tertiary Container" Background="Theme.TertiaryContainer" Foreground="Theme.OnTertiaryContainer" />
-                <ColorRoleDisplay ColorRoleName="On Tertiary Container" Background="Theme.OnTertiaryContainer" Foreground="Theme.TertiaryContainer" />
-            </MudStack>
+            <ColorWithContainerDisplay ColorRoleName="Tertiary"
+                                       RoleColor="Theme.Tertiary"
+                                       OnRoleColor="Theme.OnTertiary"
+                                       ContainerRoleColor="Theme.TertiaryContainer"
+                                       OnContainerRoleColor="Theme.OnTertiaryContainer" />
         </MudItem>
 
         <MudItem xs="12" sm="6" md="3">
-            <MudStack Spacing="0">
-                <ColorRoleDisplay IsLarge="true" ColorRoleName="Error" Background="Theme.Error" Foreground="Theme.OnError" />
-                <ColorRoleDisplay ColorRoleName="On Error" Background="Theme.OnError" Foreground="Theme.Error" />
-                
-                <div class="mt-4"/>
-                
-                <ColorRoleDisplay IsLarge="true" ColorRoleName="Error Container" Background="Theme.ErrorContainer" Foreground="Theme.OnErrorContainer" />
-                <ColorRoleDisplay ColorRoleName="On Error Container" Background="Theme.OnErrorContainer" Foreground="Theme.ErrorContainer" />
-            </MudStack>
+            <ColorWithContainerDisplay ColorRoleName="Error"
+                                       RoleColor="Theme.Error"
+                                       OnRoleColor="Theme.OnError"
+                                       ContainerRoleColor="Theme.ErrorContainer"
+                                       OnContainerRoleColor="Theme.OnErrorContainer" />
         </MudItem>
 
         <MudItem xs="12" md="9">
             <MudGrid Spacing="0">
                 <MudItem xs="12" sm="2">
-                    <ColorRoleDisplay IsLarge="true" ColorRoleName="Surface Container Lowest" Background="Theme.SurfaceContainerLowest" Foreground="Theme.OnSurface" />
+                    <ColorRoleDisplay IsLarge="true" ColorRoleName="Surface Container Lowest" 
+                        Background="Theme.SurfaceContainerLowest" Foreground="Theme.OnSurface" />
                 </MudItem>
                 <MudItem xs="12" sm="2">
-                    <ColorRoleDisplay IsLarge="true" ColorRoleName="Surface Container Low" Background="Theme.SurfaceContainerLow" Foreground="Theme.OnSurface" />
+                    <ColorRoleDisplay IsLarge="true" ColorRoleName="Surface Container Low" 
+                        Background="Theme.SurfaceContainerLow" Foreground="Theme.OnSurface" />
                 </MudItem>
                 <MudItem xs="12" sm="2">
-                    <ColorRoleDisplay IsLarge="true" ColorRoleName="Surface Container" Background="Theme.SurfaceContainer" Foreground="Theme.OnSurface" />
+                    <ColorRoleDisplay IsLarge="true" ColorRoleName="Surface Container" 
+                        Background="Theme.SurfaceContainer" Foreground="Theme.OnSurface" />
                 </MudItem>
                 <MudItem xs="12" sm="2">
-                    <ColorRoleDisplay IsLarge="true" ColorRoleName="Surface Container High" Background="Theme.SurfaceContainerHigh" Foreground="Theme.OnSurface" />
+                    <ColorRoleDisplay IsLarge="true" ColorRoleName="Surface Container High" 
+                        Background="Theme.SurfaceContainerHigh" Foreground="Theme.OnSurface" />
                 </MudItem>
                 <MudItem xs="12" sm="2">
-                    <ColorRoleDisplay IsLarge="true" ColorRoleName="Surface Container Highest" Background="Theme.SurfaceContainerHighest" Foreground="Theme.OnSurface" />
+                    <ColorRoleDisplay IsLarge="true" ColorRoleName="Surface Container Highest" 
+                        Background="Theme.SurfaceContainerHighest" Foreground="Theme.OnSurface" />
                 </MudItem>
             </MudGrid>
             
