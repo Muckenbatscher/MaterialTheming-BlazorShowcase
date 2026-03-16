@@ -1,8 +1,15 @@
-﻿<MudPaper Style="@_paperStyle" Elevation="0" Square="true" Class="px-4 d-flex align-center">
+﻿<MudPaper Style="@_paperStyle" Elevation="0" Square="true" Class="pa-2 d-flex">
     <MudText Typo="Typo.body2" Style="font-weight: 500;">@ColorRoleName</MudText>
 </MudPaper>
 
 @code {
+    public enum HeightStyle
+    {
+        Small,
+        Normal,
+        Large
+    }
+
     [Parameter]
     public RgbColor Background { get; set; } = RgbColor.FromArgb(0xFFFFFF);
 
@@ -13,11 +20,21 @@
     public string ColorRoleName { get; set; } = string.Empty;
 
     [Parameter]
-    public bool IsLarge { get; set; } = false; 
+    public HeightStyle Height { get; set; } = HeightStyle.Small; 
 
     private string _bgColor => Background.ToHtml();
     private string _fgColor => Foreground.ToHtml();
-    string _height => IsLarge ? "72px" : "44px";
+    string _height => $"{HeightMap(Height)}px";
+
+    private int HeightMap(HeightStyle heightStyle)
+    {
+        return heightStyle switch
+        {
+            HeightStyle.Small => 40,
+            HeightStyle.Large => 80,
+            _ => 64
+        };
+    }
 
     private string _paperStyle => $"background-color: {_bgColor}; color: {_fgColor}; height: {_height};";
 }
