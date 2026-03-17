@@ -1,4 +1,4 @@
-﻿@page "/material-theming"
+﻿@page "/"
 
 <PageTitle>Material Theming</PageTitle>
 
@@ -7,8 +7,7 @@
 <ThemeDisplay Theme="_theme"/>
 
 @code {
-    private ThemeColors? _theme = ThemeBuilder.CreateFromSourceColor("#FF4020").Build();
-
+    private ThemeColors? _theme = ThemeBuilder.CreateFromSourceColor("#512BD4").Build(); // .NET brand color
 
     private void GenerateColor(MouseEventArgs args)
     {

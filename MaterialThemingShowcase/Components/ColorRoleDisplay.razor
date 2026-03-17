@@ -1,4 +1,4 @@
-﻿<MudPaper Style="@_paperStyle" Elevation="0" Square="true" Class="@($"px-4 d-flex align-center")">
+﻿<MudPaper Style="@_paperStyle" Elevation="0" Square="true" Class="px-4 d-flex align-center">
     <MudText Typo="Typo.body2" Style="font-weight: 500;">@ColorRoleName</MudText>
 </MudPaper>
 
@@ -17,7 +17,7 @@
 
     private string _bgColor => Background.ToHtml();
     private string _fgColor => Foreground.ToHtml();
-    string _height => IsLarge ? "96px" : "64px";
+    string _height => IsLarge ? "72px" : "44px";
 
     private string _paperStyle => $"background-color: {_bgColor}; color: {_fgColor}; height: {_height};";
 }
