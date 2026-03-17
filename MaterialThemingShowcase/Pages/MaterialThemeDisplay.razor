@@ -2,12 +2,32 @@
 
 <PageTitle>Material Theming</PageTitle>
 
+<MudSelect T="MaterialTheming.Variant" @bind-Value="_selectedVariant">
+    @foreach (var variant in _variants)
+    {
+        <MudSelectItem Value="@variant">@(variant.ToString())</MudSelectItem>
+    }
+</MudSelect>
 <MudButton Color="Color.Primary" Variant="MudBlazor.Variant.Filled" @onclick="GenerateColor">Generate Color</MudButton>
 
 <ThemeDisplay Theme="_theme"/>
 
-@code {
+    @code {
     private ThemeColors? _theme = ThemeBuilder.CreateFromSourceColor("#512BD4").Build(); // .NET brand color
+
+    private List<MaterialTheming.Variant> _variants = [
+        MaterialTheming.Variant.TonalSpot,
+        MaterialTheming.Variant.Neutral,
+        MaterialTheming.Variant.Monochrome,
+        MaterialTheming.Variant.Vibrant,
+        MaterialTheming.Variant.Fidelity,
+        MaterialTheming.Variant.Content,
+        MaterialTheming.Variant.Rainbow,
+        MaterialTheming.Variant.FruitSalad,
+        MaterialTheming.Variant.Expressive,
+        MaterialTheming.Variant.CMF,
+    ];
+    private MaterialTheming.Variant _selectedVariant = MaterialTheming.Variant.TonalSpot;
 
     private void GenerateColor(MouseEventArgs args)
     {
@@ -24,7 +44,7 @@
         var colorHex = colors[colorIndex];
         _theme = ThemeBuilder
             .CreateFromSourceColor(colorHex)
-            .WithVariant(MaterialTheming.Variant.Expressive)
+            .WithVariant(_selectedVariant)
             .WithMode(ThemeMode.Dark)
             .WithSpecVersion(SpecVersion.Spec2025)
             .Build();
