@@ -7,10 +7,10 @@
     }
 </style>
 
-<MudContainer MaxWidth="MaxWidth.ExtraLarge" Class="mt-8">
+<MudContainer MaxWidth="MaxWidth.ExtraLarge" Style="background: white" Class="pa-4">
     <MudGrid Spacing="4">
         
-        <MudItem xs="12" sm="6" md="3">
+        <MudItem xs="12" sm="6" lg="3">
             <ColorWithContainerDisplay ColorRoleName="Primary"
                                        RoleColor="Theme.Primary" 
                                        OnRoleColor="Theme.OnPrimary"
@@ -18,7 +18,7 @@
                                        OnContainerRoleColor="Theme.OnPrimaryContainer" />
         </MudItem>
 
-        <MudItem xs="12" sm="6" md="3">
+        <MudItem xs="12" sm="6" lg="3">
             <ColorWithContainerDisplay ColorRoleName="Secondary"
                                        RoleColor="Theme.Secondary"
                                        OnRoleColor="Theme.OnSecondary"
@@ -26,7 +26,7 @@
                                        OnContainerRoleColor="Theme.OnSecondaryContainer" />
         </MudItem>
 
-        <MudItem xs="12" sm="6" md="3">
+        <MudItem xs="12" sm="6" lg="3">
             <ColorWithContainerDisplay ColorRoleName="Tertiary"
                                        RoleColor="Theme.Tertiary"
                                        OnRoleColor="Theme.OnTertiary"
@@ -34,7 +34,7 @@
                                        OnContainerRoleColor="Theme.OnTertiaryContainer" />
         </MudItem>
 
-        <MudItem xs="12" sm="6" md="3">
+        <MudItem xs="12" sm="6" lg="3">
             <ColorWithContainerDisplay ColorRoleName="Error"
                                        RoleColor="Theme.Error"
                                        OnRoleColor="Theme.OnError"
@@ -43,7 +43,7 @@
         </MudItem>
 
 
-        <MudItem xs="12" sm="6" md="3">
+        <MudItem xs="12" sm="6" lg="3">
             <FixedColorCombinationDisplay ColorRoleName="Primary Fixed"
                                           RoleColor="Theme.PrimaryFixed"
                                           RoleColorDim="Theme.PrimaryFixedDim"
@@ -51,7 +51,7 @@
                                           OnRoleVariantColor="Theme.OnPrimaryFixedVariant" />
         </MudItem>
 
-        <MudItem xs="12" sm="6" md="3">
+        <MudItem xs="12" sm="6" lg="3">
             <FixedColorCombinationDisplay ColorRoleName="Secondary Fixed"
                                           RoleColor="Theme.SecondaryFixed"
                                           RoleColorDim="Theme.SecondaryFixedDim"
@@ -59,7 +59,7 @@
                                           OnRoleVariantColor="Theme.OnSecondaryFixedVariant" />
         </MudItem>
 
-        <MudItem xs="12" sm="6" md="3">
+        <MudItem xs="12" sm="6" lg="3">
             <FixedColorCombinationDisplay ColorRoleName="Tertiary Fixed"
                                           RoleColor="Theme.TertiaryFixed"
                                           RoleColorDim="Theme.TertiaryFixedDim"
@@ -69,9 +69,9 @@
         
         <MudFlexBreak /> @* Missing element for Error Fixed*@
 
-        <MudItem xs="12" md="9">
+        <MudItem xs="12" md="6" lg="9">
             <MudStack Spacing="4">
-                <div class="d-flex flex-column flex-md-row w-100">
+                <div class="d-flex flex-column flex-lg-row w-100">
                     <div class="equal-flex-item">
                         <ColorRoleDisplay Height="ColorRoleDisplay.HeightStyle.Normal" ColorRoleName="Surface Dim" Background="Theme.SurfaceDim" Foreground="Theme.OnSurface" />
                     </div>
@@ -83,7 +83,7 @@
                     </div>
                 </div>
 
-                <div class="d-flex flex-column flex-md-row w-100">
+                <div class="d-flex flex-column flex-lg-row w-100">
                     <div class="equal-flex-item">
                         <ColorRoleDisplay Height="ColorRoleDisplay.HeightStyle.Large" ColorRoleName="Surface Container Lowest" Background="Theme.SurfaceContainerLowest" Foreground="Theme.OnSurface" />
                     </div>
@@ -103,7 +103,7 @@
             </MudStack>
         </MudItem>
         
-        <MudItem xs="12" md="3">
+        <MudItem xs="12" md="6" lg="3">
             <MudStack Spacing="0">
 
                 <ColorRoleDisplay Height="ColorRoleDisplay.HeightStyle.Small" ColorRoleName="Inverse Surface" Background="Theme.InverseSurface" Foreground="Theme.InverseOnSurface" />
@@ -113,8 +113,8 @@
             </MudStack>
         </MudItem>
 
-        <MudItem xs="12" md="9">
-            <div class="d-flex flex-column flex-md-row w-100">
+        <MudItem xs="12" md="6" lg="9">
+            <div class="d-flex flex-column flex-lg-row w-100">
                 <div class="equal-flex-item">
                     <ColorRoleDisplay Height="ColorRoleDisplay.HeightStyle.Small" ColorRoleName="On Surface" Background="Theme.OnSurface" Foreground="Theme.Surface" />
                 </div>
@@ -130,8 +130,8 @@
             </div>
         </MudItem>
 
-        <MudItem xs="12" md="3">
-            <div class="d-flex flex-column flex-md-row w-100 gap-4">
+        <MudItem xs="12" md="6" lg="3">
+            <div class="d-flex flex-column flex-lg-row w-100 gap-4">
                 <div class="equal-flex-item">
                     <ColorRoleDisplay Height="ColorRoleDisplay.HeightStyle.Small" ColorRoleName="Scrim" Background="Theme.Scrim" Foreground="@(RgbColor.FromArgb(0xFFFFFF))" />
                 </div>
