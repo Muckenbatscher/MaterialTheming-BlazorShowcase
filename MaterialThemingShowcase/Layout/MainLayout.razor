@@ -38,7 +38,14 @@
         {
             PaletteLight = _lightPalette,
             PaletteDark = _darkPalette,
-            LayoutProperties = new LayoutProperties()
+            LayoutProperties = new LayoutProperties(),
+            Typography = new Typography()
+            {
+                Default = new DefaultTypography()
+                {
+                    FontFamily = new[] { "Google Sans", "Roboto", "Helvetica", "Arial", "sans-serif" }
+                }
+            }
         };
     }
 
