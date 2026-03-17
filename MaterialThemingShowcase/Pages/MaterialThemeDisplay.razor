@@ -22,6 +22,11 @@
         };
         var colorIndex = new Random().Next(0, colors.Length);
         var colorHex = colors[colorIndex];
-        _theme = ThemeBuilder.CreateFromSourceColor(colorHex).Build();
+        _theme = ThemeBuilder
+            .CreateFromSourceColor(colorHex)
+            .WithVariant(MaterialTheming.Variant.Expressive)
+            .WithMode(ThemeMode.Dark)
+            .WithSpecVersion(SpecVersion.Spec2025)
+            .Build();
     }
 }
