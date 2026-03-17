@@ -43,36 +43,36 @@
         </MudItem>
 
         <MudItem xs="12" md="9">
-            <div class="d-flex flex-column flex-md-row w-100">
-    
-                <div class="equal-flex-item">
-                    <ColorRoleDisplay Height="ColorRoleDisplay.HeightStyle.Large" ColorRoleName="Surface Container Lowest" Background="Theme.SurfaceContainerLowest" Foreground="Theme.OnSurface" />
-                </div>
-                <div class="equal-flex-item">
-                    <ColorRoleDisplay Height="ColorRoleDisplay.HeightStyle.Large" ColorRoleName="Surface Container Low" Background="Theme.SurfaceContainerLow" Foreground="Theme.OnSurface" />
-                </div>
-                <div class="equal-flex-item">
-                    <ColorRoleDisplay Height="ColorRoleDisplay.HeightStyle.Large" ColorRoleName="Surface Container" Background="Theme.SurfaceContainer" Foreground="Theme.OnSurface" />
-                </div>
-                <div class="equal-flex-item">
-                    <ColorRoleDisplay Height="ColorRoleDisplay.HeightStyle.Large" ColorRoleName="Surface Container High" Background="Theme.SurfaceContainerHigh" Foreground="Theme.OnSurface" />
-                </div>
-                <div class="equal-flex-item">
-                    <ColorRoleDisplay Height="ColorRoleDisplay.HeightStyle.Large" ColorRoleName="Surface Container Highest" Background="Theme.SurfaceContainerHighest" Foreground="Theme.OnSurface" />
+            <MudStack Spacing="4">
+                <div class="d-flex flex-column flex-md-row w-100">
+                    <div class="equal-flex-item">
+                        <ColorRoleDisplay Height="ColorRoleDisplay.HeightStyle.Large" ColorRoleName="Surface Container Lowest" Background="Theme.SurfaceContainerLowest" Foreground="Theme.OnSurface" />
+                    </div>
+                    <div class="equal-flex-item">
+                        <ColorRoleDisplay Height="ColorRoleDisplay.HeightStyle.Large" ColorRoleName="Surface Container Low" Background="Theme.SurfaceContainerLow" Foreground="Theme.OnSurface" />
+                    </div>
+                    <div class="equal-flex-item">
+                        <ColorRoleDisplay Height="ColorRoleDisplay.HeightStyle.Large" ColorRoleName="Surface Container" Background="Theme.SurfaceContainer" Foreground="Theme.OnSurface" />
+                    </div>
+                    <div class="equal-flex-item">
+                        <ColorRoleDisplay Height="ColorRoleDisplay.HeightStyle.Large" ColorRoleName="Surface Container High" Background="Theme.SurfaceContainerHigh" Foreground="Theme.OnSurface" />
+                    </div>
+                    <div class="equal-flex-item">
+                        <ColorRoleDisplay Height="ColorRoleDisplay.HeightStyle.Large" ColorRoleName="Surface Container Highest" Background="Theme.SurfaceContainerHighest" Foreground="Theme.OnSurface" />
+                    </div>
                 </div>
 
-            </div>
-            
-            <MudStack Row="true" Spacing="0" Class="mt-4">
-                <MudItem xs="3">
-                    <ColorRoleDisplay ColorRoleName="Outline" Background="Theme.Outline" Foreground="Theme.OnSurface" />
-                </MudItem>
-                <MudItem xs="3">
-                    <ColorRoleDisplay ColorRoleName="Outline Variant" Background="Theme.OutlineVariant" Foreground="Theme.OnSurface" />
-                </MudItem>
+                <div class="d-flex flex-column flex-md-row w-100">
+                    <div class="equal-flex-item">
+                        <ColorRoleDisplay ColorRoleName="Outline" Background="Theme.Outline" Foreground="Theme.Surface" />
+                    </div>
+                    <div class="equal-flex-item">
+                        <ColorRoleDisplay ColorRoleName="Outline Variant" Background="Theme.OutlineVariant" Foreground="Theme.Surface" />
+                    </div>
+                </div>
             </MudStack>
         </MudItem>
-
+        
         <MudItem xs="12" md="3">
             <MudStack Spacing="0">
                 <ColorRoleDisplay Height="ColorRoleDisplay.HeightStyle.Normal" ColorRoleName="Inverse Surface" Background="Theme.InverseSurface" Foreground="Theme.InverseOnSurface" />
