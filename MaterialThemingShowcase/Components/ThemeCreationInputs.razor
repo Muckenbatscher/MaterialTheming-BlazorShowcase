@@ -1,9 +1,4 @@
-﻿@page "/"
-@using MudBlazor.Utilities
-
-<PageTitle>Material Theming</PageTitle>
-
-<MudColorPicker ShowToolbar="false" ShowAlpha="false" ShowInputs="false" ThrottleInterval="300" DragEffect="true" PickerVariant="PickerVariant.Static" Value="SelectedColor" ValueChanged="OnSelectedColorChanged" />
+﻿<MudColorPicker ShowToolbar="false" ShowAlpha="false" ShowInputs="false" ThrottleInterval="300" DragEffect="true" PickerVariant="PickerVariant.Static" Value="SelectedColor" ValueChanged="OnSelectedColorChanged" />
 
 <MudSelect T="MaterialTheming.Variant" @bind-Value="SelectedVariant">
     @foreach (var variant in _variants)
@@ -14,16 +9,28 @@
 
 <MudCheckBox @bind-Value="DarkMode">Dark Mode</MudCheckBox>
 
-<MudToggleGroup T="ContrastLevel" @bind-Value="Contrast" Outlined="true" Delimiters="true">
+<MudToggleGroup T="ContrastLevel" @bind-Value="SelectedContrast" Outlined="true" Delimiters="true">
     <MudToggleItem Value="@(ContrastLevel.Normal)">Normal (0.0)</MudToggleItem>
     <MudToggleItem Value="@(ContrastLevel.Medium)">Medium (0.5)</MudToggleItem>
     <MudToggleItem Value="@(ContrastLevel.High)">High (1.0)</MudToggleItem>
 </MudToggleGroup>
 
-<ThemeDisplay Theme="_theme"/>
+@code {
 
-    @code {
-    private ThemeColors? _theme = ThemeBuilder.CreateFromSourceColor("#512BD4").Build(); // .NET brand color
+    [Parameter] 
+    public EventCallback<ThemeCreationInputParameters> OnInputsChanged { get; set; }
+
+    private async Task NotifyInputsChanged()
+    {
+        var inputs = new ThemeCreationInputParameters()
+        {
+            SourceColor = RgbColor.FromRgb(SelectedColor.R, SelectedColor.G, SelectedColor.B),
+            Variant = SelectedVariant,
+            Mode = DarkMode ? ThemeMode.Dark : ThemeMode.Light,
+            Contrast = SelectedContrast
+        };
+        await OnInputsChanged.InvokeAsync(inputs);
+    }
 
     private MudColor SelectedColor
     {
@@ -31,7 +38,7 @@
         set
         {
             field = value;
-            GenerateTheme();
+            _ = NotifyInputsChanged();
         }
     } = "#512BD4";
 
@@ -58,40 +65,27 @@
         set
         {
             field = value;
-            GenerateTheme();
+            _ = NotifyInputsChanged();
         }
     } = MaterialTheming.Variant.TonalSpot;
 
-    private bool DarkMode 
-    { 
-        get; 
-        set
-        {
-            field = value;
-            GenerateTheme();
-        } 
-    } = false;
-
-    private ContrastLevel Contrast
+    private bool DarkMode
     {
         get;
         set
         {
             field = value;
-            GenerateTheme();
+            _ = NotifyInputsChanged();
+        }
+    } = false;
+
+    private ContrastLevel SelectedContrast
+    {
+        get;
+        set
+        {
+            field = value;
+            _ = NotifyInputsChanged();
         }
     } = ContrastLevel.Normal;
-
-    private void GenerateTheme()
-    {
-        var colorHex = RgbColor.FromRgb(SelectedColor.R, SelectedColor.G, SelectedColor.B);
-        var mode = DarkMode ? ThemeMode.Dark : ThemeMode.Light;
-        _theme = ThemeBuilder
-            .CreateFromSourceColor(colorHex)
-            .WithVariant(SelectedVariant)
-            .WithMode(mode)
-            .WithContrastLevel(Contrast)
-            .WithSpecVersion(SpecVersion.Spec2025)
-            .Build();
-    }
 }
